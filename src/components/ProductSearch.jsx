@@ -10,7 +10,7 @@ const ProductSearch = () => {
     setQuery(q);
 
     if (q.length >= 2) {
-      const res = await axios.get(`http://localhost:4000/search?q=${q}`);
+      const res = await axios.get(`https://inventory-5xjw.onrender.com/search?q=${q}`);
       setResults(res.data);
     } else {
       setResults([]);

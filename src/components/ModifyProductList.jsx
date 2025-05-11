@@ -12,7 +12,7 @@ const ModifyProductList = () => {
   }, []);
 
   const fetchAll = async () => {
-    const res = await axios.get('http://localhost:4000/products');
+    const res = await axios.get('https://inventory-5xjw.onrender.com/products');
     setProducts(res.data);
   };
 
@@ -23,7 +23,7 @@ const ModifyProductList = () => {
   }, {});
 
   const savePrice = async (id) => {
-    await axios.put(`http://localhost:4000/update/${id}`, { price: newPrice });
+    await axios.put(`https://inventory-5xjw.onrender.com/update/${id}`, { price: newPrice });
     setEditId(null);
     setNewPrice('');
     fetchAll();

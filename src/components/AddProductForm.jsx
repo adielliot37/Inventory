@@ -36,7 +36,7 @@ const handleChange = (e) => {
   const fetchSuggestions = async (term) => {
     if (!term) return;
     try {
-      const res = await axios.get(`http://localhost:4000/suggestions/${term}`);
+      const res = await axios.get(`https://inventory-5xjw.onrender.com/suggestions/${term}`);
       setSuggestions(res.data);
     } catch (err) {
       console.error(err);
@@ -51,7 +51,7 @@ const handleVendorSelect = async (vendor) => {
   console.log('Selected vendor:', vendor);
 
   try {
-    const res = await axios.get(`http://localhost:4000/search?q=${vendor}`);
+    const res = await axios.get(`https://inventory-5xjw.onrender.com/search?q=${vendor}`);
     console.log('Fetched products for vendor:', res.data);
 
     const exactMatch = res.data.find(
@@ -93,7 +93,7 @@ const handleVendorSelect = async (vendor) => {
     if (!validateForm()) return;
 
     try {
-      await axios.post('http://localhost:4000/add', form);
+      await axios.post('https://inventory-5xjw.onrender.com/add', form);
       setSuccess('Product added!');
       setForm({ name: '', price: '', vendorName: '', vendorNumber: '' });
       setSuggestions({ names: [], vendors: [] });
